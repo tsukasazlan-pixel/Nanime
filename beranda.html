@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anime Slider</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+
+
+ 
+  <section id="top">
+    <button onclick="pindahHalaman()" class="pencarian"> <i class="fa fa-user"></i> cari user</button>
+    <button id="statusButton" class="status"> <i class="fa fa-award"></i> MASTER</button>
+  </section>
+
+
+  <div class="carousel">
+    <div class="track">
+      <div class="slide"><img src="https://picsum.photos/id/1015/400/250"><div class="body"><h3>Anime 1</h3><p>Deskripsi singkat anime...</p></div></div>
+      <div class="slide"><img src="https://picsum.photos/id/1025/400/250"><div class="body"><h3>Anime 2</h3><p>Deskripsi singkat anime...</p></div></div>
+      <div class="slide"><img src="https://picsum.photos/id/1035/400/250"><div class="body"><h3>Anime 3</h3><p>Deskripsi singkat anime...</p></div></div>
+      <div class="slide"><img src="https://picsum.photos/id/1045/400/250"><div class="body"><h3>Anime 4</h3><p>Deskripsi singkat anime...</p></div></div>
+    <div class="slide">
+      <div class="swiper-slide" onclick="location.href='detail.html'">
+  <img src="anime1.jpg" alt="Judul Anime" />
+  <div class="slide-info">
+    <span class="status">Completed</span>
+    <h3>Judul Anime</h3>
+    <p>Deskripsi singkat anime, maksimal 2-3 baris...</p>
+    <div class="tags">
+      <span class="rating">⭐ 9.3</span>
+      <span class="views">👁 12.1k</span>
+      <span class="genre adventure">Adventure</span>
+      <span class="genre action">Action</span>
+    </div>
+  </div>
+</div>
+      </div>
+      <div class="slide"><img src="https://picsum.photos/id/1055/400/250"><div class="body"><h3>Anime 5</h3><p>Deskripsi singkat anime...</p></div>
+      </div>
+</div>
+<!---<div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" onclick="location.href='detail.html'">
+  <img src="anime1.jpg" alt="Judul Anime" />
+  <div class="slide-info">
+    <span class="status">Completed</span>
+    <h3>Judul Anime</h3>
+    <p>Deskripsi singkat anime, maksimal 2-3 baris...</p>
+    <div class="tags">
+      <span class="rating">⭐ 9.3</span>
+      <span class="views">👁 12.1k</span>
+      <span class="genre adventure">Adventure</span>
+      <span class="genre action">Action</span>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>--->
+  
+<div class="nobar-box">
+  <div class="nobar-left">
+    <i class="fa fa-users"></i>
+  </div>
+  <div class="nobar-content">
+    <strong>Nobar (Nonton Bareng)</strong>
+    <p>Bikin room dan nonton anime bareng temanmu. <span>(Sedang dalam perbaikan)</span></p>
+  </div>
+  <button class="nobar-btn">Info</button>
+</div>
+
+<div class="search-box">
+  <i class="fa fa-search"></i>
+  <input type="text" placeholder="Cari anime">
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="switchTab(0)">Pengumuman</div>
+  <div class="tab" onclick="switchTab(1)">Profile</div>
+</div>
+
+<div class="tab-content">
+  <div class="content active">
+    <p>Selamat datang di NanimeID! 🎉 Anime terbaru akan update setiap minggu.</p>
+  </div>
+  <div class="content">
+    <p>Ini halaman profile kamu.</p>
+  </div>
+</div>
+
+
+<div class="populer-section">
+  <div class="populer-header">
+    <h2>📺 Sedang Populer</h2>
+    <a href="#" class="btn-selengkapnya">Selengkapnya ➤</a>
+  </div>
+  <div class="anime-cards" id="animeCards">
+    <!-- Kartu anime akan di-generate dari JS -->
+  </div>
+</div>
+
+<!----bottom nav-->
+<div class="bottom-nav">
+  <ul class="flex-flex-row">
+    <li>
+  <div class="nav-item" onclick="activate(this, 'Beranda')">
+    <i class="fas fa-home"></i>
+  </div>
+    </li>
+  </ul>
+  <ul class="flex-flex-row">
+    <li>
+  <div class="nav-item" onclick="activate(this, 'list')">
+    <i class="fas fa-bars"></i>
+  </div>
+    </li>
+  </ul>
+  <ul class="flex-flex-row">
+    <li>
+  <div class="nav-item" onclick="activate(this, 'riwayat')">
+    <i class="fas fa-clock"></i>
+  </div>
+    </li>
+  </ul>
+  <ul class="flex-flex-row">
+    <li>
+  <div class="nav-item" onclick="activate(this, 'Beranda')">
+    <i class="fas fa-heart"></i>
+  </div>
+    </li>
+  </ul>
+  <ul class="flex-flex-row">
+    <li>
+  <div class="nav-item" onclick="activate(this, 'user')">
+    <i class="fas fa-user"></i>
+  </div>
+    </li>
+  </ul>
+</div>
+
+
+<script>window.addEventListener('DOMContentLoaded', () => {
+      const color = localStorage.getItem('themeColor');
+      if (color) {
+        document.querySelectorAll('.nobar-btn').forEach(btn => {
+          btn.style.backgroundColor = color;
+          btn.style.color = '#fff';
+        });
+document.documentElement.style.setProperty('--highlight-color', color).forEach(btn => {
+          btn.style.backgroundColor = color;
+          btn.style.color = '#fff';
+        });
+      }
+    });</script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
