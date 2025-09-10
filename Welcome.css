@@ -1,0 +1,165 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.slide {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+.icon-wrapper {
+  background-color: #f43784;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.play-icon {
+  width: 0;
+  height: 0;
+  border-left: 20px solid #000;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+}
+
+.book-icon {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  position: relative;
+}
+
+.book-icon::before, .book-icon::after {
+  content: '';
+  position: absolute;
+  background-color: #fff;
+}
+
+.book-icon::before {
+  width: 18px;
+  height: 24px;
+  background-color: #f43784;
+  border-radius: 6px;
+  left: 6px;
+  top: 3px;
+}
+
+.book-icon::after {
+  width: 6px;
+  height: 10px;
+  background-color: #000;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  left: 15px;
+  top: 10px;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 10px 20px;
+}
+
+p {
+  font-size: 14px;
+  color: #ccc;
+  margin: 0 20px;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.scroll-down span {
+  font-size: 20px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+.dots {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #555;
+}
+
+.dot.active {
+  background: #f43784;
+}
+
+
+.rocket-icon {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  position: relative;
+}
+
+.rocket-icon::before {
+  content: '🚀';
+  font-size: 40px;
+  color: #f43784;
+}
+
+.strt-btn {
+  margin-top: 30px;
+  background-color: #f43784;
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.strt-btn:hover {
+  background-color: #d0206f;
+}
+
+
+.wraper i{
+  font-size: 80px;
+  color: #f43784;
+  margin-bottom: 20px;
+}

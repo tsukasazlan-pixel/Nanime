@@ -1,0 +1,56 @@
+
+body {
+  font-family: sans-serif;
+  background: #000;
+  color: #fff;
+  padding: 20px;
+}
+
+.preview {
+  background: #222;
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.icon {
+  background: #ff4081;
+  padding: 10px;
+border-radius: 50%;
+  color: white;
+}
+
+.btn-preview,
+.btn-lanjut {
+  background: #ff4081;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 50px);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.color-option {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 3px solid transparent;
+}
+
+.color-option.selected {
+  border-color: white;
+}
